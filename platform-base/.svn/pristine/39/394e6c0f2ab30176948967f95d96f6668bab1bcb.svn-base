@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xinleju.platform.base.vo.TendDataSourceVo">
+
+	<!-- 获取列表根据Map查询 -->
+	<select id="queryList" resultType="com.xinleju.platform.base.vo.TendDataSourceVo">
+	  	  select t.id  as tendId ,d.code as tendCode,d.id  as databaseId, d.account as userName,d.password as password,d.url as url,d.driver_name as driverName from sys_tend_database d  left join sys_tend_user t on t.database_id=d.id
+    where (d.url is not null and d.url !='') and   (d.password is not null and d.password !='') and  (d.account is not null and d.account !='') and  (d.driver_name is not null and d.driver_name !='')
+
+	</select>
+	<select id="queryTendInfo" parameterType="java.util.Map" resultType="java.util.Map" >
+	  select t.id  as tendId ,d.code as tendCode,t.due_time dueTime,t.state status  from sys_tend_user t,sys_tend_database  d where t.database_id=d.id and t.delflag!=1 and t.state=1 and t.second_level_domain=#{domain,jdbcType=VARCHAR} and 1=1  limit 1
+	</select>
+	
+</mapper>

@@ -1,0 +1,17 @@
+package com.xinleju.platform.base.utils;
+
+public class LoginUtils {
+	private static ThreadLocal<SecurityUserBeanInfo> threadLocal = new ThreadLocal<SecurityUserBeanInfo>();
+
+    
+	public static void setSecurityUserBeanInfo(SecurityUserBeanInfo securityUserBeanInfo){
+		threadLocal.set(securityUserBeanInfo);
+	}
+	/**
+	 * @param securityUserBeanInfo
+	 * @return
+	 */
+	public static SecurityUserBeanInfo getSecurityUserBeanInfo(){
+		return threadLocal.get();
+	}
+}

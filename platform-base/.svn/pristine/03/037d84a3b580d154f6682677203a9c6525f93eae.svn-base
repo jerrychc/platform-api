@@ -1,0 +1,121 @@
+package com.xinleju.platform.base.service.impl;
+
+import java.io.Serializable;
+import java.util.List;
+import java.util.Map;
+
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.xinleju.platform.base.annotation.Description;
+import com.xinleju.platform.base.dao.BaseDao;
+import com.xinleju.platform.base.service.BaseService;
+import com.xinleju.platform.base.utils.Page;
+
+@Service
+public abstract class BaseServiceImpl<K  extends  Serializable,T> implements BaseService <K,T>{
+	private static Logger log = Logger.getLogger(BaseServiceImpl.class);
+	@Autowired
+	private BaseDao<K,T> baseDao;
+
+	@Override
+	@Description(instruction="保存对象基础类")
+	public int save(T object) throws Exception {
+		// TODO Auto-generated method stub
+	    return this.getBaseDao().save(object);
+	}
+
+	@Override
+	@Description(instruction="批量保存对象基础类")
+	public int saveBatch(List<T> objectList) throws Exception {
+		// TODO Auto-generated method stub
+		return this.getBaseDao().saveBatch(objectList);
+	}
+
+	@Override
+	@Description(instruction="批量更新对象基础类")
+	public int updateBatch(List<T> objectList) throws Exception {
+		// TODO Auto-generated method stub
+		return this.getBaseDao().updateBatch(objectList);
+	}
+
+	@Override
+	@Description(instruction="更新对象基础类")
+	public int update(T object) throws Exception {
+		// TODO Auto-generated method stub
+		return this.getBaseDao().update(object);
+	}
+
+
+	@Override
+	@Description(instruction="删除对象基础类")
+	public int deleteObjectById(K id) throws Exception {
+		// TODO Auto-generated method stub
+		return this.getBaseDao().deleteObjectById(id);
+	}
+
+	@Override
+	@Description(instruction="批量删除对象基础类")
+	public int deleteAllObjectByIds(List<K> ids) throws Exception {
+		// TODO Auto-generated method stub
+		return this.getBaseDao().deleteAllObjectByIds(ids);
+	}
+
+	@Override
+	@Description(instruction="获取对象基础类")
+	public T getObjectById(K id) throws Exception {
+		// TODO Auto-generated method stub
+		return this.getBaseDao().getObjectById(id);
+	}
+
+	@Override
+	@Description(instruction="获取分页对象基础类")
+	public Page getPage(Map<String, Object> paramater, Integer start,
+			Integer pageSize) throws Exception {
+		// TODO Auto-generated method stub
+		return this.getBaseDao().getPage(paramater, start, pageSize);
+	}
+
+	@Override
+	@Description(instruction="获取列表对象基础类")
+	public List<T> queryList(Map<String, Object> paramater) throws Exception {
+		// TODO Auto-generated method stub
+		return this.getBaseDao().queryList(paramater);
+	}
+
+	
+	
+	
+	
+	@Override
+	public int deletePseudoObjectById(K id) throws Exception {
+		// TODO Auto-generated method stub
+		return  this.getBaseDao().deletePseudoObjectById(id);
+	}
+
+	@Override
+	public int deletePseudoAllObjectByIds(List<K> ids) throws Exception {
+		// TODO Auto-generated method stub
+		return this.getBaseDao().deletePseudoAllObjectByIds(ids);
+	}
+
+	@Override
+	@Description(instruction="获取总数基础类")
+	public Integer getCount(Map<String, Object> paramater) throws Exception {
+		// TODO Auto-generated method stub
+		return this.getBaseDao().getCount(paramater);
+	}
+
+	public BaseDao<K, T> getBaseDao() {
+		return baseDao;
+	}
+
+	public void setBaseDao(BaseDao<K, T> baseDao) {
+		this.baseDao = baseDao;
+	}
+
+	
+
+	
+}

@@ -1,0 +1,121 @@
+package com.xinleju.platform.base.service;
+
+import java.util.List;
+import java.util.Map;
+
+import com.xinleju.platform.base.utils.Page;
+
+
+
+public interface BaseService <K,T>{
+	
+	/**
+	 * 新增业务对象
+	 * @param object  实体对象
+	 */
+	public int save(T object) throws Exception;
+	
+	/**
+	 * 批量保存对象
+	 * @param objectList
+	 */
+	public int saveBatch(List<T> objectList) throws Exception;
+
+	/**
+	 * 
+	 * 批量修改对象
+	 * @param objectList
+	 */
+	public int updateBatch(List<T> objectList) throws Exception;
+	
+	/**
+	 * 修改业务对象
+	 * 
+	 * @param object 业务实体对象
+	 * 			
+	 * @return 更新的记录数
+	 */
+	public int update(T object)  throws Exception;
+	
+	
+	
+	/**
+	 * 通过Id删除业务对象
+	 * 
+	 * @param id 业务实体对象id
+	 * 			
+	 * @return 删除的记录数
+	 */
+	public int deleteObjectById(K id) throws Exception;
+	
+	
+	/**
+	 * 通过Ids批量删除业务对象
+	 * 
+	 * @param ids 业务实体对象ids列表
+	 * 			
+	 * @return 删除的记录数
+	 */
+	public int deleteAllObjectByIds(List<K> ids) throws Exception;
+	
+	
+	/**
+	 * 根据Id获取业务对象
+	 * 
+	 * @param id  业务对象主键
+	 * 
+	 * @return     业务对象
+	 */
+	public T getObjectById(K id) throws Exception;
+	
+	
+	/**
+	 * 查询符合条件的对象Page
+	 * @param paramater 参数map
+	 * @param start 开始记录数
+	 * @param pageSize 每页记录数
+	 * @return 返回符合条件的对象Page
+	 */
+	public Page getPage(Map<String, Object> paramater, Integer start,
+			Integer pageSize) throws Exception;
+	
+	
+	/**
+	 * 查询符合条件的对象List列表 
+	 * @param map
+	 * @return
+	 */
+	public List<T> queryList(Map<String, Object> paramater)  throws Exception;
+	
+	/**
+	 * 返回符合条件总数
+	 * @param paramater
+	 * @return
+	 * @throws Exception
+	 */
+	public Integer getCount(Map<String, Object> paramater) throws Exception;
+	
+	
+	
+	
+	/**
+	 * 通过Id伪删除业务对象
+	 * 
+	 * @param id 业务实体对象id
+	 * 			
+	 * @return 删除的记录数
+	 */
+	public int deletePseudoObjectById(K id) throws Exception;
+	
+	
+	/**
+	 * 通过Ids批量伪删除业务对象
+	 * 
+	 * @param ids 业务实体对象ids列表
+	 * 			
+	 * @return 删除的记录数
+	 */
+	public int deletePseudoAllObjectByIds(List<K> ids) throws Exception;
+
+	
+}
