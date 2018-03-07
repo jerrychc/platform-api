@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>蓝凌新闻及流程</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <script src="../../common/common.css.js"></script>
+    <script>
+        /**
+         * 选择公司加载完公司后，大类下面的新闻内容要发生变化，加载该公司下面的新闻
+         */
+        function changeCompanyCallback(data, $ele) {
+            var url = $($ele).parents('.groupnews_container').attr('data-contentUrl');
+            var dataP = {newsType:"2",createCompanyName:data.name,start:0,limit:10};
+            $.ajax({
+                url: url+'?time='+Math.random(),
+                type: 'POST',
+                dataType: 'json',
+                contentType: 'application/json',
+                data:JSON.stringify(dataP),
+                success: function(resultData) {
+                    $('#fzgsggul').find('li').remove();
+                    $.each(resultData.result,function(m, item) {
+                        /*<li>
+                         <a target="_blank" id="1" data-href="content/contentRowType/contentRowType_staticPage.html?from=portal&amp;id=6f1b533b38e8482bbbfbba88e9e59668" title="鑫苑集团信字〔2018〕2号 关于深入应用巨洲云CC的通知" href="/platform-app/content/contentRowType/contentRowType_staticPage.html?from=portal&amp;id=6f1b533b38e8482bbbfbba88e9e59668" style="display: inline-block;"><i></i>鑫苑集团信字〔2018〕2号 关于深入应用巨洲云CC的通知</a>
+                         <span class="date">2018-01-25</span>
+                         </li>*/
+                        var li = $("<li>");
+                        var a = $('<a target="_blank" title="'+item.name+'" href="'+item.url+'" style="display: inline-block;"><i></i>'+item.name+'</a>');
+                        var span = $('<span class="date">'+item.startDate+'</span>');
+                        li.append(a);
+                        li.append(span);
+                        $('#fzgsggul').append(li);
+                    });
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    $.xljUtils.tip("red","服务异常,请联系管理员！");
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+<header class="container-fluid xj-form-header">
+    <div class="row clearfix">
+        <div class="col-md-1 col-sm-4 col-xs-4 xj-index-logo">
+            <img src="../../common/img/logo.png" alt="巨洲云">
+        </div>
+        <div id="billTitle" class="col-md-8 col-sm-4 col-xs-4 xj-form-title">蓝凌门户</div>
+        <!--<div class="col-md-3 col-sm-4 col-xs-4 xj-form-btn">
+            <button type="button" class="btn btn-sm btn-adv" id="_close">关闭</button>
+        </div>-->
+    </div>
+</header>
+<div class="container-fluid xj-font">
+    <div class="row mt50">
+        <div  class="col-md-10 col-md-offset-1 container-all">
+            <div class="resizable-cs" style="width: 100%; height: 300px; padding: 0px 5px 5px 0px;float: left;">
+                <div class="groupnews_container" data-contenturl="/platform-app/ld/landrayFlowInstance/portalList" data-title="流程" id="lcdiv" style="height: 100%;width:100%">
+                    <div class="fullWidth">
+                        <div class="news_title clearfix"><span><img src="../../common/img/arrow_mini.png" alt="">流程</span>
+                            <div class="component-content">
+                                <ul class="rules_list" id="lcul">
+                                </ul>
+                            </div>
+                            <div class="component-tools" style="position: absolute; right: 0px; top: 0px; border: none; height: 40px; z-index: 5;">
+                                <div class="pull-right" style="line-height: 40px;"><a href="../flow/flow_list.html" class="news_more" title="更多" target="_blank" style="float: right; margin-right: 10px; color: rgb(51, 51, 51);"><i class="iconMore_bd"></i> </a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-10 col-md-offset-1 container-all">
+            <div class="resizable-cs" style="width: 100%; height: 300px; padding: 0px 5px 5px 0px;float: left;">
+                <div class="groupnews_container" data-contenturl="/platform-app/ld/landrayNewsInfo/portalList" data-title="集团新闻" id="jtxwdiv" style="height: 100%;width:100%">
+                    <div class="fullWidth">
+                        <div class="news_title clearfix"><span><img src="../../common/img/arrow_mini.png" alt="">集团新闻</span>
+                            <div class="component-content">
+                                <ul class="rules_list" id="jtxwul">
+                                </ul>
+                            </div>
+                            <div class="component-tools" style="position: absolute; right: 0px; top: 0px; border: none; height: 40px; z-index: 5;">
+                                <div class="pull-right" style="line-height: 40px;"><a href="../news/news_list.html?newsType=0" class="news_more" title="更多" target="_blank" style="float: right; margin-right: 10px; color: rgb(51, 51, 51);"><i class="iconMore_bd"></i> </a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1 container-all">
+            <div class="resizable-cs" style="width: 100%; height: 300px; padding: 0px 5px 5px 0px;float: left;">
+                <div class="groupnews_container" data-contenturl="/platform-app/ld/landrayNewsInfo/portalList" data-title="集团公告" id="jtggdiv" style="height: 100%;width:100%">
+                    <div class="fullWidth">
+                        <div class="news_title clearfix"><span><img src="../../common/img/arrow_mini.png" alt="">集团公告</span>
+                            <div class="component-content">
+                                <ul class="rules_list" id="jtggul">
+                                </ul>
+                            </div>
+                            <div class="component-tools" style="position: absolute; right: 0px; top: 0px; border: none; height: 40px; z-index: 5;">
+                                <div class="pull-right" style="line-height: 40px;"><a href="../news/news_list.html?newsType=1" class="news_more" title="更多" target="_blank" style="float: right; margin-right: 10px; color: rgb(51, 51, 51);"><i class="iconMore_bd"></i> </a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-10 col-md-offset-1 container-all">
+            <div class="resizable-cs" style="width: 100%; height: 300px; padding: 0px 5px 5px 0px;float: left;">
+                <div class="groupnews_container" data-contenturl="/platform-app/ld/landrayNewsInfo/portalList" data-title="分子公司公告" id="fzgsggdiv" style="height: 100%;width:100%">
+                    <div class="fullWidth">
+                        <div class="news_title clearfix"><span><img src="../../common/img/arrow_mini.png" alt="">分子公司公告</span>
+                            <div class="component-content">
+                                <ul class="rules_list" id="fzgsggul">
+                                </ul>
+                            </div>
+                            <div class="component-tools" style="position: absolute; right: 0px; top: 0px; border: none; height: 40px; z-index: 5;">
+                                <div class="pull-right" style="line-height: 40px;">
+                                    <a href="../news/news_list.html?newsType=2" class="news_more" title="更多" target="_blank" style="float: right; margin-right: 10px; color: rgb(51, 51, 51);">
+                                        <i class="iconMore_bd"></i>
+                                    </a>
+                                    <a class="single-selector more-component" href="javascript:void(0);" style="float: right; margin-right: 10px; color: rgb(51, 51, 51); cursor: pointer;" data-treeparam="{&quot;orgStatus&quot;:&quot;1&quot;,&quot;rootSelect&quot;:&quot;1&quot;,&quot;rootStatus&quot;:&quot;1&quot;,&quot;orgDelFlag&quot;:&quot;0&quot;,&quot;type&quot;:&quot;company&quot;,&quot;rootDelFlag&quot;:&quot;0&quot;}" data-selectnodetype="{&quot;msg&quot;:&quot;请选择公司&quot;,&quot;type&quot;:&quot;company&quot;}" data-treeurl="/platform-app/sys/org/root/getOrgTreeByType" data-savecallback="changeCompanyCallback" readonly="readonly">更换公司</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1 container-all">
+            <div class="resizable-cs" style="width: 100%; height: 300px; padding: 0px 5px 5px 0px;float: left;">
+                <div class="groupnews_container" data-contenturl="/platform-app//ld/landrayMeetingSummary/portalList" data-title="会议纪要" id="hyjydiv" style="height: 100%;width:100%">
+                    <div class="fullWidth">
+                        <div class="news_title clearfix"><span><img src="../../common/img/arrow_mini.png" alt="">会议纪要</span>
+                            <div class="component-content">
+                                <ul class="rules_list" id="hyjyul">
+                                </ul>
+                            </div>
+                            <div class="component-tools" style="position: absolute; right: 0px; top: 0px; border: none; height: 40px; z-index: 5;">
+                                <div class="pull-right" style="line-height: 40px;">
+                                    <a href="../meeting/meeting_list.html" class="news_more" title="更多" target="_blank" style="float: right; margin-right: 10px; color: rgb(51, 51, 51);">
+                                        <i class="iconMore_bd"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../common/common.js"></script>
+<script src="portal.js"></script>
+</body>
+</html>

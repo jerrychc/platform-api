@@ -1,0 +1,7 @@
+package ${g_scheme.packageName}.dto.service;
+
+import com.xinleju.platform.base.dto.service.BaseDtoServiceCustomer;
+
+public interface ${g_systable.className}DtoServiceCustomer extends BaseDtoServiceCustomer{
+
+}

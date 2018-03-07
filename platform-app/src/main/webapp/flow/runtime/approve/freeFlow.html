@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>自由流</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!--
+    -->
+    <link rel="styleSheet" href="/platform-app/common/bootstrap/css/bootstrap.min.css">
+    <link rel="styleSheet" href="/platform-app/common/jqGrid/css/css/redmond/jquery-ui-1.8.16.custom.css">
+    <link rel="styleSheet" href="/platform-app/common/zTreeStyle/zTreeStyle.css">
+    <link rel="styleSheet" href="/platform-app/common/easyDialog/easydialog.css">
+    <link rel="styleSheet" href="/platform-app/common/bootstrap/css/bootstrap-datetimepicker.min.css">
+    <link rel="styleSheet" href="/platform-app/common/jqGrid/css/ui.jqgrid.css">
+    <link rel="styleSheet" href="/platform-app/common/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="styleSheet" href="/platform-app/common/jqGrid/css/grid.extend.css">
+    <link rel="styleSheet" href="/platform-app/common/bootstrap/css/bootstrap.extend.css">
+    <link rel="styleSheet" href="/platform-app/common/custom/css/index.css">
+    <link rel="stylesheet" href="css/flow.css?tag=flow&v=1.1.1" type="text/css">
+    <link rel="stylesheet" href="css/freeFlow.css?v=1.1.1" type="text/css">
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.js"></script>
+    <![endif]-->
+</head>
+<style>
+
+</style>
+<body>
+<header class="container-fluid xj-form-header">
+    <div class="row clearfix">
+        <div class="col-xs-5 xj-index-logo">
+            <img src="../../../common/img/logo.png" alt="巨洲云">
+        </div>
+        <div class="col-xs-2  xj-form-title" >自由流审批</div>
+        <div class="col-xs-5 ">
+            <div class="pull-right xj-flow-btn" role="group" id="operationBtnContainer">
+                <button type="button" class="btn btn-sm"  id="submit_h" title="close">保存</button>
+
+                <button type="button" class="btn btn-sm"  id="closeWinBtn" title="close">关闭</button>
+            </div>
+        </div>
+
+    </div>
+</header>
+
+<div class="container-fluid">
+
+    <div class="row mt40">
+        <div class="col-xs-12">
+            <div class="row">
+                <div class="col-xs-12 flow-content-title ">
+                    <span id="flowNameTitle" ondblclick="ShowElement(this)">流程标题</span>
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-xs-10" style="margin:0 auto;float: none;">
+                    <div class="flow-tab-content" id="flowContent">
+                        <input type="hidden" id="loginUserId">
+                        <input type="hidden" id="loginUserTendId">
+                        <input type="hidden" id="toUserIds">
+                        <input type="hidden" id="processTitle">
+                        <input type="hidden" id="processLink">
+                        <!-- 审批记录 -->
+                        <div id="approveHistoryDiv">
+                            <!-- 业务表单内容 -->
+                            <div class="xj-form-tab container-fluid">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <i class="fl-ap-icon flow-yewuxinxi" aria-hidden="true"></i>
+                                        <span class="">业务信息</span>
+                                    </div>
+                                    <div class="col-md-9 btns-group addTop">
+                                        <button type="button" class="btn btn-sm" id="cancelSaveBusiForm" style="display: none;">取消</button>
+                                        <button type="button" class="btn btn-sm" id="saveBusiForm" style="display: none;">保存</button>
+                                        <button type="button" class="btn btn-sm" id="editBusiForm" style="display: none;">编辑</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="xj-form-content">
+                                <div class="embed-responsive " style="">
+                                    <div id="form-composer"></div>
+                                    <iframe class="embed-responsive-item" id="bizForm" name="bizForm" src=""></iframe>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="approve-title clearfix">
+                        <span class="tit">自由流审批流程</span>
+                        <!--<div class="type pull-left">
+                            <input type="radio" checked name="flowType">自由流程
+                            <input type="radio" name="flowType">流程模板
+                        </div>
+                        <div class="pull-left flow-edit">
+                            <select class="form-control"><option>费用报销</option></select>
+                            <a href="javascript:;" data-toggle="modal" data-target="#myModal" class="editBtn">模板收藏夹 </a>
+                        </div>
+                        <div class="pull-right">
+                            <input type="checkbox" name="isFaverCheckbox">收藏该模板
+                        </div>-->
+                    </div>
+                    <div class="item-box">
+                        <div class="item clearfix col-xs-12 pd0">
+                            <div class="col-xs-2 tlcenter"><span class="huanjie_Name">环节一</span></div>
+                            <div class="item-con clearfix col-xs-9">
+                                <div class="type">
+                                    <input type="radio" name="h_radio" checked value="2"><span style="margin-right: 20px;">审批</span>
+                                    <input type="radio" name="h_radio" value="1"><span>抄送</span>
+
+                                </div>
+                                <div class="person-box">
+                                    <div class="input-group" style="width: 100%">
+                                        <input type="hidden" class="personIds" name="personIds" readonly="">
+                                        <input type="text" class="form-control" style="min-width: 200px;" readonly="" name="PersonName" placeholder="选择人员" data-placeholder="选择人员">
+                                        <div class="input-group-addon" onclick="empty(this)"> <a class="glyphicon glyphicon-remove"></a></div>
+                                        <span class="input-group-addon w28" onclick="addMultipleGird(this)">
+                                        <a class="fa fa-ellipsis-h fatherNodeSelector">
+                                        </a>
+                                        </span>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="del-box col-xs-1">
+                                <a href="#" class="delete_h"></a>
+                            </div>
+                        </div>
+                        <div class="item clearfix col-xs-12 pd0">
+                            <div class="col-xs-2 tlcenter"><span class="huanjie_Name">环节二</span></div>
+                            <div class="item-con clearfix col-xs-9">
+                                <div class="type">
+                                    <input type="radio" name="h_radio2" checked value="2"><span style="margin-right: 20px;">审批</span>
+                                    <input type="radio" name="h_radio2" value="1"><span>抄送</span>
+
+                                </div>
+                                <div class="person-box">
+                                    <div class="input-group" style="width: 100%">
+                                        <input type="hidden" class="personIds" name="personIds" readonly="">
+                                        <input type="text" class="form-control" style="min-width: 200px;" readonly="" name="PersonName" placeholder="选择人员" data-placeholder="选择人员">
+                                        <div class="input-group-addon" onclick="empty(this)"> <a class="glyphicon glyphicon-remove"></a></div>
+                                        <span class="input-group-addon w28" onclick="addMultipleGird(this)">
+                                        <a class="fa fa-ellipsis-h fatherNodeSelector">
+                                        </a>
+                                        </span>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="del-box col-xs-1">
+                                <a href="#" class="delete_h"></a>
+                            </div>
+                        </div>
+                        <div class="item clearfix col-xs-12 pd0 add-new-item">
+                            <div class="col-xs-2 tlcenter"><span class="huanjie_Name">新环节</span></div>
+                            <div class="item-con clearfix col-xs-9">
+                                <div class="add-box">
+                                    <span class="add_h">添加新环节</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="width: 400px">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span></button>
+                <h6 class="modal-title" id="treeModalLabel">
+                   <span class="temp-icon">模板收藏夹</span></h6>
+
+                <button class="btn btn-sm blue pull-right mr20 save-modal-data">保存</button>
+            </div>
+            <div class="modal-body">
+                <div class="order-box">
+                    <ul>
+                        <li class="clearfix">
+                            <span class="tmp-name" ondblclick="ShowElement(this)">模板名称水电费我饿哦欧美</span>
+                            <a class="up" href="#"></a>
+                            <a class="down"  href="#"></a>
+                            <a class="tmp-del"  href="#"></a>
+                        </li>
+                        <li class="clearfix">
+                            <span class="tmp-name" ondblclick="ShowElement(this)">模板名称水电费我饿哦欧美</span>
+                            <a class="up" href="#"></a>
+                            <a class="down"  href="#"></a>
+                            <a class="tmp-del"  href="#"></a>
+                        </li>
+                        <li class="clearfix">
+                            <span class="tmp-name">模板名称水电费我饿哦欧美</span>
+                            <a class="up" href="#"></a>
+                            <a class="down"  href="#"></a>
+                            <a class="tmp-del"  href="#"></a>
+                        </li>
+                        <li class="clearfix">
+                            <span class="tmp-name">模板名称水电费我饿哦欧美</span>
+                            <a class="up" href="#"></a>
+                            <a class="down"  href="#"></a>
+                            <a class="tmp-del"  href="#"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+<script type="text/javascript">
+    window.baseUrl = '/platform-app/';
+    window.hostUrl = '/platform-app/';
+</script>
+<script src="/platform-app/common/jquery/jquery-1.11.3.min.js" type="text/javascript"></script>
+<script src="/platform-app/common/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="/platform-app/common/validate/jquery.validate.min.js" type="text/javascript"></script>
+<script src="/platform-app/common/easyDialog/easydialog.js" type="text/javascript"></script>
+<script src="/platform-app/common/jquery/jquery.dotdotdot.min.js" type="text/javascript"></script>
+<script src="/platform-app/common/scroll/jquery.nicescroll.js" type="text/javascript"></script>
+
+<script src="/platform-app/common/zTreeStyle/jquery.ztree.all.js" type="text/javascript"></script>
+<script src="/platform-app/common/zTreeStyle/jquery.ztree.exhide.js" type="text/javascript"></script>
+
+<script src="/platform-app/common/jqGrid/js/i18n/grid.locale-cn.js" type="text/javascript"></script>
+<script src="/platform-app/common/jqGrid/js/jquery.jqGrid.src.js" type="text/javascript"></script>
+<script src="/platform-app/common/jqGrid/js/jquery.jqGrid.plugin.js" type="text/javascript"></script>
+
+
+<script src="/platform-app/common/utils/xljUtils.js" type="text/javascript"></script>
+<script src="/platform-app/common/utils/xljMultipleSelector.js" type="text/javascript"></script>
+
+<script src="flowFree.js?v=1.1.1" type="text/javascript"></script>
+<!--[if IE 8]>
+<script type="text/javascript" src="/platform-app/sysManager/customForm/dist/fcCommon.min.ie8.js?tag=cf&v=1.1.0"></script>
+<script type="text/javascript" src="/platform-app/sysManager/customForm/dist/fcMain.min.ie8.js?tag=cf&v=1.1.0"></script>
+<![endif]-->
+<script type="text/javascript" src="/platform-app/sysManager/customForm/dist/fcCommon.min.js?tag=cf&v=1.1.1"></script>
+<script type="text/javascript" src="/platform-app/sysManager/customForm/dist/fcMain.min.js?tag=cf&v=1.1.1"></script>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+package ${g_scheme.packageName}.service.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.xinleju.platform.base.service.impl.BaseServiceImpl;
+import ${g_scheme.packageName}.dao.${g_systable.className}Dao;
+import ${g_scheme.packageName}.entity.${g_systable.className};
+import ${g_scheme.packageName}.service.${g_systable.className}Service;
+
+/**
+ * @author ${g_scheme.author}
+ * 
+ * 
+ */
+
+@Service
+public class ${g_systable.className}ServiceImpl extends  BaseServiceImpl<String,${g_systable.className}> implements ${g_systable.className}Service{
+	
+
+	@Autowired
+	private ${g_systable.className}Dao ${g_systable.className.substring(0,1).toLowerCase()}${g_systable.className.substring(1)}Dao;
+	
+
+}

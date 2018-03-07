@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xinleju.platform.sys.base.entity.CommonDraft">
+	<!-- 新增 -->
+	<insert id="save">
+		${value}
+	</insert>
+	<!-- 修改根据Id -->
+	<update id="update">
+		${value}
+	</update>
+	<!-- 伪删除根据Id -->
+	<update id="deletePseudoObjectById">
+		${value}
+	</update>
+	<!-- 批量伪删除根据Id -->
+	<update id="deletePseudoAllObjectByIds">
+		${value}
+	</update>
+	<!-- 删除根据Id -->
+	<delete id="deleteById">
+		${value}
+	</delete>
+	<!-- 批量删除根据Id -->
+	<delete id="deleteBatchByIds">
+		${value}
+	</delete>
+	<!-- 获取单个对象，根据Id-->
+	<select id="get" resultType="com.xinleju.platform.sys.base.entity.CommonDraft">
+		${value}
+	</select>
+	<!-- 获取列表根据Map查询 -->
+	<select id="queryList" resultType="com.xinleju.platform.sys.base.entity.CommonDraft">
+		${value}
+	</select>
+	<!-- 获取分页根据Map查询 -->
+	<select id="queryPageList" resultType="com.xinleju.platform.sys.base.entity.CommonDraft">
+		${value}
+	</select>
+	<!-- 获取总记录数 -->
+	<select id="queryCount" resultType="java.lang.Integer">
+		${value}
+	</select>
+	
+	<!-- 我的发起获取分页根据Map查询 -->
+	<select id="getMyFormPageSort" resultType="com.xinleju.platform.sys.base.entity.CommonDraft" parameterType="java.util.HashMap">
+			select 
+				b.id AS id,
+					b.create_person_id AS createPersonId,
+					b.create_person_name AS createPersonName,
+					b.create_org_id AS createOrgId,
+					b.create_org_name AS createOrgName,
+					b.create_company_id AS createCompanyId,
+					b.create_company_name AS createCompanyName,
+					b.create_date AS createDate,
+					b.update_person_id AS createPersonId,
+					b.update_person_name AS updatePersonName,
+					b.update_date AS updateDate,
+					b.delflag AS delflag,
+					b.concurrency_version AS concurrencyVersion,
+					b.tend_id AS tendId,
+					b.content,
+					b.custom_form_id AS customFormId,
+					b.operator_id AS operatorId,
+					b.operator_name AS operatorName,
+					b.operate_department_id AS operateDepartmentId,
+					b.operate_department_name AS operateDepartmentName,
+					b.operate_company_id AS operateCompanyId,
+					b.operate_company_name AS operateCompanyName,
+					b.operate_project_id AS operateProjectId,
+					b.operate_project_name AS operateProjectName,
+					b.operate_qi_id AS operateQiId,
+					b.operate_qi_name AS operateQiName,
+					b.title,
+					b.backup1,
+					b.backup2,
+					b.backup3,
+					b.backup4,
+					b.backup5,
+					b.custom_form_his_id AS customFormHisId,
+					b.business_object_name AS businessOjbectName,
+					b.business_type AS businessType
+				 from (
+				(SELECT
+					s.*
+				FROM
+					pt_sys_base_common_draft s,
+					pt_sys_base_custom_form t
+				WHERE
+					s.custom_form_id = t.id
+				AND t.is_mobile_allowed = 1
+				AND s.operator_id = #{operatorId}
+				AND s.delflag = '0'
+				AND t.delflag = '0'
+				and s.business_type='1')
+				
+				UNION
+				
+				(SELECT
+					m.*
+				FROM
+					pt_sys_base_common_draft m
+				WHERE
+				m.operator_id = #{operatorId}
+				AND m.delflag = '0'
+				and m.business_type='2')
+				) b ORDER BY b.update_date desc
+				limit #{start},#{limit}
+	</select>
+	
+	<!-- 我的发起获取总记录数 -->
+	<select id="getMyFormPageCount" resultType="java.lang.Integer" parameterType="java.util.HashMap">
+		select 
+			count(1) 
+			from pt_sys_base_common_draft s where s.operator_id = #{operatorId} and s.delflag='0'
+	</select>
+</mapper>

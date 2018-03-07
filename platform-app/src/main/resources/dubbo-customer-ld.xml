@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	    http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util 
+        http://www.springframework.org/schema/util/spring-util-4.3.xsd
+        http://code.alibabatech.com/schema/dubbo          
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+        ">
+
+	<!-- 蓝凌人员对应 -->
+	<dubbo:reference id="landraySysUserDtoServiceCustomer" interface="com.xinleju.platform.ld.dto.service.LandraySysUserDtoServiceCustomer" />
+	<!-- 蓝凌流程分类 -->
+	<dubbo:reference id="landrayFlowTypeDtoServiceCustomer" interface="com.xinleju.platform.ld.dto.service.LandrayFlowTypeDtoServiceCustomer" />
+	<!-- 蓝凌流程实例 -->
+	<dubbo:reference id="landrayFlowInstanceDtoServiceCustomer" interface="com.xinleju.platform.ld.dto.service.LandrayFlowInstanceDtoServiceCustomer" />
+	<!-- 蓝凌流程人员权限 -->
+	<dubbo:reference id="landrayFlowUserScaleDtoServiceCustomer" interface="com.xinleju.platform.ld.dto.service.LandrayFlowUserScaleDtoServiceCustomer" />
+	<!-- 蓝凌新闻信息 -->
+	<dubbo:reference id="landrayNewsInfoDtoServiceCustomer" interface="com.xinleju.platform.ld.dto.service.LandrayNewsInfoDtoServiceCustomer" />
+	<!-- 蓝凌会议纪要 -->
+	<dubbo:reference id="landrayMeetingSummaryDtoServiceCustomer" interface="com.xinleju.platform.ld.dto.service.LandrayMeetingSummaryDtoServiceCustomer" />
+	
+</beans>  

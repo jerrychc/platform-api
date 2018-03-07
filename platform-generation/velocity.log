@@ -1,0 +1,333 @@
+2017-08-16 15:11:22,902 - Log4JLogChute initialized using file 'velocity.log'
+2017-08-16 15:11:22,902 - Initializing Velocity, Calling init()...
+2017-08-16 15:11:22,902 - Starting Apache Velocity v1.7 (compiled: 2010-11-19 12:14:37)
+2017-08-16 15:11:22,902 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2017-08-16 15:11:22,902 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
+2017-08-16 15:11:22,902 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/format/Formatter).  Falling back to next log system...
+2017-08-16 15:11:22,902 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
+2017-08-16 15:11:22,902 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
+2017-08-16 15:11:22,902 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-16 15:11:22,919 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
+2017-08-16 15:11:22,919 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
+2017-08-16 15:11:22,919 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
+2017-08-16 15:11:22,919 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
+2017-08-16 15:11:22,919 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
+2017-08-16 15:11:22,919 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2017-08-16 15:11:22,919 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2017-08-16 15:11:22,919 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2017-08-16 15:11:22,919 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2017-08-16 15:11:22,919 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2017-08-16 15:11:22,950 - Created '20' parsers.
+2017-08-16 15:11:22,950 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2017-08-16 15:11:22,950 - Could not load resource 'VM_global_library.vm' from ResourceLoader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader: ClasspathResourceLoader Error: cannot find resource VM_global_library.vm
+2017-08-16 15:11:22,950 - Velocimacro : Default library not found.
+2017-08-16 15:11:22,950 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2017-08-16 15:11:22,950 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2017-08-16 15:11:22,950 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2017-08-16 15:11:22,950 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2017-08-16 15:11:23,246 - ResourceManager : found Controller_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-16 15:11:23,293 - ResourceManager : found Entity_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-16 15:11:23,308 - ResourceManager : found Service_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-16 15:11:23,324 - ResourceManager : found ServiceImpl_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-16 15:11:23,340 - ResourceManager : found Dao_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-16 15:11:23,340 - ResourceManager : found DaoImpl_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-16 15:11:23,355 - ResourceManager : found MapperXml_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-16 15:11:23,355 - Null reference [template 'MapperXml_template.vm', line 8, column 17] : ${value} cannot be resolved.
+2017-08-16 15:11:23,355 - Null reference [template 'MapperXml_template.vm', line 12, column 17] : ${value} cannot be resolved.
+2017-08-16 15:11:23,355 - Null reference [template 'MapperXml_template.vm', line 16, column 17] : ${value} cannot be resolved.
+2017-08-16 15:11:23,355 - Null reference [template 'MapperXml_template.vm', line 20, column 17] : ${value} cannot be resolved.
+2017-08-16 15:11:23,355 - Null reference [template 'MapperXml_template.vm', line 24, column 17] : ${value} cannot be resolved.
+2017-08-16 15:11:23,355 - Null reference [template 'MapperXml_template.vm', line 28, column 17] : ${value} cannot be resolved.
+2017-08-16 15:11:23,371 - Null reference [template 'MapperXml_template.vm', line 32, column 17] : ${value} cannot be resolved.
+2017-08-16 15:11:23,371 - Null reference [template 'MapperXml_template.vm', line 36, column 17] : ${value} cannot be resolved.
+2017-08-16 15:11:23,371 - Null reference [template 'MapperXml_template.vm', line 40, column 17] : ${value} cannot be resolved.
+2017-08-16 15:11:23,371 - Null reference [template 'MapperXml_template.vm', line 44, column 17] : ${value} cannot be resolved.
+2017-08-16 15:11:23,496 - ResourceManager : found DtoServiceProduct_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-16 15:11:23,605 - ResourceManager : found Dto_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-16 15:11:23,605 - ResourceManager : found DtoServiceCustomer_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-16 15:11:23,605 - ResourceManager : found TableSql_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-16 15:14:45,331 - ResourceManager : found Controller_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-16 15:14:45,362 - ResourceManager : found Entity_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-16 15:14:45,378 - ResourceManager : found Service_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-16 15:14:45,393 - ResourceManager : found ServiceImpl_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-16 15:14:45,393 - ResourceManager : found Dao_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-16 15:14:45,409 - ResourceManager : found DaoImpl_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-16 15:14:45,425 - ResourceManager : found MapperXml_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-16 15:14:45,425 - Null reference [template 'MapperXml_template.vm', line 8, column 17] : ${value} cannot be resolved.
+2017-08-16 15:14:45,425 - Null reference [template 'MapperXml_template.vm', line 12, column 17] : ${value} cannot be resolved.
+2017-08-16 15:14:45,425 - Null reference [template 'MapperXml_template.vm', line 16, column 17] : ${value} cannot be resolved.
+2017-08-16 15:14:45,425 - Null reference [template 'MapperXml_template.vm', line 20, column 17] : ${value} cannot be resolved.
+2017-08-16 15:14:45,425 - Null reference [template 'MapperXml_template.vm', line 24, column 17] : ${value} cannot be resolved.
+2017-08-16 15:14:45,425 - Null reference [template 'MapperXml_template.vm', line 28, column 17] : ${value} cannot be resolved.
+2017-08-16 15:14:45,425 - Null reference [template 'MapperXml_template.vm', line 32, column 17] : ${value} cannot be resolved.
+2017-08-16 15:14:45,425 - Null reference [template 'MapperXml_template.vm', line 36, column 17] : ${value} cannot be resolved.
+2017-08-16 15:14:45,425 - Null reference [template 'MapperXml_template.vm', line 40, column 17] : ${value} cannot be resolved.
+2017-08-16 15:14:45,425 - Null reference [template 'MapperXml_template.vm', line 44, column 17] : ${value} cannot be resolved.
+2017-08-16 15:14:45,550 - ResourceManager : found DtoServiceProduct_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-16 15:14:45,581 - ResourceManager : found Dto_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-16 15:14:45,596 - ResourceManager : found DtoServiceCustomer_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-16 15:14:45,596 - ResourceManager : found TableSql_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 13:45:14,785 - Log4JLogChute initialized using file 'velocity.log'
+2017-08-17 13:45:14,786 - Initializing Velocity, Calling init()...
+2017-08-17 13:45:14,786 - Starting Apache Velocity v1.7 (compiled: 2010-11-19 12:14:37)
+2017-08-17 13:45:14,786 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2017-08-17 13:45:14,786 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
+2017-08-17 13:45:14,786 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/format/Formatter).  Falling back to next log system...
+2017-08-17 13:45:14,786 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
+2017-08-17 13:45:14,786 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
+2017-08-17 13:45:14,790 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 13:45:14,800 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
+2017-08-17 13:45:14,801 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
+2017-08-17 13:45:14,802 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
+2017-08-17 13:45:14,803 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
+2017-08-17 13:45:14,803 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
+2017-08-17 13:45:14,804 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2017-08-17 13:45:14,805 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2017-08-17 13:45:14,806 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2017-08-17 13:45:14,808 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2017-08-17 13:45:14,809 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2017-08-17 13:45:14,839 - Created '20' parsers.
+2017-08-17 13:45:14,847 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2017-08-17 13:45:14,848 - Could not load resource 'VM_global_library.vm' from ResourceLoader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader: ClasspathResourceLoader Error: cannot find resource VM_global_library.vm
+2017-08-17 13:45:14,848 - Velocimacro : Default library not found.
+2017-08-17 13:45:14,848 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2017-08-17 13:45:14,848 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2017-08-17 13:45:14,848 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2017-08-17 13:45:14,848 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2017-08-17 13:45:15,086 - ResourceManager : found Controller_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 13:45:15,229 - ResourceManager : found Entity_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 13:45:15,245 - ResourceManager : found Service_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 13:45:15,267 - ResourceManager : found ServiceImpl_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 13:45:15,276 - ResourceManager : found Dao_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 13:45:15,287 - ResourceManager : found DaoImpl_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 13:45:15,307 - ResourceManager : found MapperXml_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 13:45:15,308 - Null reference [template 'MapperXml_template.vm', line 8, column 17] : ${value} cannot be resolved.
+2017-08-17 13:45:15,308 - Null reference [template 'MapperXml_template.vm', line 12, column 17] : ${value} cannot be resolved.
+2017-08-17 13:45:15,308 - Null reference [template 'MapperXml_template.vm', line 16, column 17] : ${value} cannot be resolved.
+2017-08-17 13:45:15,308 - Null reference [template 'MapperXml_template.vm', line 20, column 17] : ${value} cannot be resolved.
+2017-08-17 13:45:15,308 - Null reference [template 'MapperXml_template.vm', line 24, column 17] : ${value} cannot be resolved.
+2017-08-17 13:45:15,308 - Null reference [template 'MapperXml_template.vm', line 28, column 17] : ${value} cannot be resolved.
+2017-08-17 13:45:15,308 - Null reference [template 'MapperXml_template.vm', line 32, column 17] : ${value} cannot be resolved.
+2017-08-17 13:45:15,308 - Null reference [template 'MapperXml_template.vm', line 36, column 17] : ${value} cannot be resolved.
+2017-08-17 13:45:15,308 - Null reference [template 'MapperXml_template.vm', line 40, column 17] : ${value} cannot be resolved.
+2017-08-17 13:45:15,308 - Null reference [template 'MapperXml_template.vm', line 44, column 17] : ${value} cannot be resolved.
+2017-08-17 13:45:15,445 - ResourceManager : found DtoServiceProduct_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 13:45:15,477 - ResourceManager : found Dto_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 13:45:15,482 - ResourceManager : found DtoServiceCustomer_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 13:45:15,483 - ResourceManager : found TableSql_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 13:54:39,212 - ResourceManager : found Controller_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 13:54:39,256 - ResourceManager : found Entity_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 13:54:39,265 - ResourceManager : found Service_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 13:54:39,286 - ResourceManager : found ServiceImpl_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 13:54:39,296 - ResourceManager : found Dao_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 13:54:39,310 - ResourceManager : found DaoImpl_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 13:54:39,325 - ResourceManager : found MapperXml_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 13:54:39,325 - Null reference [template 'MapperXml_template.vm', line 8, column 17] : ${value} cannot be resolved.
+2017-08-17 13:54:39,325 - Null reference [template 'MapperXml_template.vm', line 12, column 17] : ${value} cannot be resolved.
+2017-08-17 13:54:39,325 - Null reference [template 'MapperXml_template.vm', line 16, column 17] : ${value} cannot be resolved.
+2017-08-17 13:54:39,325 - Null reference [template 'MapperXml_template.vm', line 20, column 17] : ${value} cannot be resolved.
+2017-08-17 13:54:39,325 - Null reference [template 'MapperXml_template.vm', line 24, column 17] : ${value} cannot be resolved.
+2017-08-17 13:54:39,325 - Null reference [template 'MapperXml_template.vm', line 28, column 17] : ${value} cannot be resolved.
+2017-08-17 13:54:39,325 - Null reference [template 'MapperXml_template.vm', line 32, column 17] : ${value} cannot be resolved.
+2017-08-17 13:54:39,325 - Null reference [template 'MapperXml_template.vm', line 36, column 17] : ${value} cannot be resolved.
+2017-08-17 13:54:39,326 - Null reference [template 'MapperXml_template.vm', line 40, column 17] : ${value} cannot be resolved.
+2017-08-17 13:54:39,326 - Null reference [template 'MapperXml_template.vm', line 44, column 17] : ${value} cannot be resolved.
+2017-08-17 13:54:39,492 - ResourceManager : found DtoServiceProduct_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 13:54:39,527 - ResourceManager : found Dto_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 13:54:39,537 - ResourceManager : found DtoServiceCustomer_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 13:54:39,538 - ResourceManager : found TableSql_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 13:57:42,765 - ResourceManager : found Controller_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 13:57:42,808 - ResourceManager : found Entity_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 13:57:42,818 - ResourceManager : found Service_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 13:57:42,840 - ResourceManager : found ServiceImpl_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 13:57:42,847 - ResourceManager : found Dao_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 13:57:42,860 - ResourceManager : found DaoImpl_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 13:57:42,876 - ResourceManager : found MapperXml_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 13:57:42,876 - Null reference [template 'MapperXml_template.vm', line 8, column 17] : ${value} cannot be resolved.
+2017-08-17 13:57:42,876 - Null reference [template 'MapperXml_template.vm', line 12, column 17] : ${value} cannot be resolved.
+2017-08-17 13:57:42,876 - Null reference [template 'MapperXml_template.vm', line 16, column 17] : ${value} cannot be resolved.
+2017-08-17 13:57:42,876 - Null reference [template 'MapperXml_template.vm', line 20, column 17] : ${value} cannot be resolved.
+2017-08-17 13:57:42,876 - Null reference [template 'MapperXml_template.vm', line 24, column 17] : ${value} cannot be resolved.
+2017-08-17 13:57:42,876 - Null reference [template 'MapperXml_template.vm', line 28, column 17] : ${value} cannot be resolved.
+2017-08-17 13:57:42,876 - Null reference [template 'MapperXml_template.vm', line 32, column 17] : ${value} cannot be resolved.
+2017-08-17 13:57:42,876 - Null reference [template 'MapperXml_template.vm', line 36, column 17] : ${value} cannot be resolved.
+2017-08-17 13:57:42,876 - Null reference [template 'MapperXml_template.vm', line 40, column 17] : ${value} cannot be resolved.
+2017-08-17 13:57:42,876 - Null reference [template 'MapperXml_template.vm', line 44, column 17] : ${value} cannot be resolved.
+2017-08-17 13:57:43,042 - ResourceManager : found DtoServiceProduct_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 13:57:43,079 - ResourceManager : found Dto_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 13:57:43,082 - ResourceManager : found DtoServiceCustomer_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 13:57:43,083 - ResourceManager : found TableSql_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 13:59:56,958 - ResourceManager : found Controller_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 13:59:56,995 - ResourceManager : found Entity_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 13:59:57,003 - ResourceManager : found Service_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 13:59:57,026 - ResourceManager : found ServiceImpl_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 13:59:57,034 - ResourceManager : found Dao_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 13:59:57,046 - ResourceManager : found DaoImpl_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 13:59:57,064 - ResourceManager : found MapperXml_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 13:59:57,064 - Null reference [template 'MapperXml_template.vm', line 8, column 17] : ${value} cannot be resolved.
+2017-08-17 13:59:57,064 - Null reference [template 'MapperXml_template.vm', line 12, column 17] : ${value} cannot be resolved.
+2017-08-17 13:59:57,064 - Null reference [template 'MapperXml_template.vm', line 16, column 17] : ${value} cannot be resolved.
+2017-08-17 13:59:57,064 - Null reference [template 'MapperXml_template.vm', line 20, column 17] : ${value} cannot be resolved.
+2017-08-17 13:59:57,064 - Null reference [template 'MapperXml_template.vm', line 24, column 17] : ${value} cannot be resolved.
+2017-08-17 13:59:57,064 - Null reference [template 'MapperXml_template.vm', line 28, column 17] : ${value} cannot be resolved.
+2017-08-17 13:59:57,064 - Null reference [template 'MapperXml_template.vm', line 32, column 17] : ${value} cannot be resolved.
+2017-08-17 13:59:57,064 - Null reference [template 'MapperXml_template.vm', line 36, column 17] : ${value} cannot be resolved.
+2017-08-17 13:59:57,064 - Null reference [template 'MapperXml_template.vm', line 40, column 17] : ${value} cannot be resolved.
+2017-08-17 13:59:57,064 - Null reference [template 'MapperXml_template.vm', line 44, column 17] : ${value} cannot be resolved.
+2017-08-17 13:59:57,232 - ResourceManager : found DtoServiceProduct_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 13:59:57,269 - ResourceManager : found Dto_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 13:59:57,272 - ResourceManager : found DtoServiceCustomer_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 13:59:57,273 - ResourceManager : found TableSql_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 14:02:33,390 - ResourceManager : found Controller_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 14:02:33,427 - ResourceManager : found Entity_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 14:02:33,436 - ResourceManager : found Service_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 14:02:33,461 - ResourceManager : found ServiceImpl_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 14:02:33,470 - ResourceManager : found Dao_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 14:02:33,482 - ResourceManager : found DaoImpl_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 14:02:33,499 - ResourceManager : found MapperXml_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 14:02:33,499 - Null reference [template 'MapperXml_template.vm', line 8, column 17] : ${value} cannot be resolved.
+2017-08-17 14:02:33,499 - Null reference [template 'MapperXml_template.vm', line 12, column 17] : ${value} cannot be resolved.
+2017-08-17 14:02:33,499 - Null reference [template 'MapperXml_template.vm', line 16, column 17] : ${value} cannot be resolved.
+2017-08-17 14:02:33,499 - Null reference [template 'MapperXml_template.vm', line 20, column 17] : ${value} cannot be resolved.
+2017-08-17 14:02:33,499 - Null reference [template 'MapperXml_template.vm', line 24, column 17] : ${value} cannot be resolved.
+2017-08-17 14:02:33,499 - Null reference [template 'MapperXml_template.vm', line 28, column 17] : ${value} cannot be resolved.
+2017-08-17 14:02:33,499 - Null reference [template 'MapperXml_template.vm', line 32, column 17] : ${value} cannot be resolved.
+2017-08-17 14:02:33,499 - Null reference [template 'MapperXml_template.vm', line 36, column 17] : ${value} cannot be resolved.
+2017-08-17 14:02:33,499 - Null reference [template 'MapperXml_template.vm', line 40, column 17] : ${value} cannot be resolved.
+2017-08-17 14:02:33,499 - Null reference [template 'MapperXml_template.vm', line 44, column 17] : ${value} cannot be resolved.
+2017-08-17 14:02:33,662 - ResourceManager : found DtoServiceProduct_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 14:02:33,696 - ResourceManager : found Dto_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 14:02:33,700 - ResourceManager : found DtoServiceCustomer_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 14:02:33,701 - ResourceManager : found TableSql_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 14:04:13,512 - ResourceManager : found Controller_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 14:04:13,552 - ResourceManager : found Entity_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 14:04:13,563 - ResourceManager : found Service_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 14:04:13,592 - ResourceManager : found ServiceImpl_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 14:04:13,601 - ResourceManager : found Dao_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 14:04:13,614 - ResourceManager : found DaoImpl_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 14:04:13,631 - ResourceManager : found MapperXml_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 14:04:13,631 - Null reference [template 'MapperXml_template.vm', line 8, column 17] : ${value} cannot be resolved.
+2017-08-17 14:04:13,631 - Null reference [template 'MapperXml_template.vm', line 12, column 17] : ${value} cannot be resolved.
+2017-08-17 14:04:13,631 - Null reference [template 'MapperXml_template.vm', line 16, column 17] : ${value} cannot be resolved.
+2017-08-17 14:04:13,631 - Null reference [template 'MapperXml_template.vm', line 20, column 17] : ${value} cannot be resolved.
+2017-08-17 14:04:13,631 - Null reference [template 'MapperXml_template.vm', line 24, column 17] : ${value} cannot be resolved.
+2017-08-17 14:04:13,631 - Null reference [template 'MapperXml_template.vm', line 28, column 17] : ${value} cannot be resolved.
+2017-08-17 14:04:13,631 - Null reference [template 'MapperXml_template.vm', line 32, column 17] : ${value} cannot be resolved.
+2017-08-17 14:04:13,631 - Null reference [template 'MapperXml_template.vm', line 36, column 17] : ${value} cannot be resolved.
+2017-08-17 14:04:13,631 - Null reference [template 'MapperXml_template.vm', line 40, column 17] : ${value} cannot be resolved.
+2017-08-17 14:04:13,631 - Null reference [template 'MapperXml_template.vm', line 44, column 17] : ${value} cannot be resolved.
+2017-08-17 14:04:13,784 - ResourceManager : found DtoServiceProduct_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 14:04:13,819 - ResourceManager : found Dto_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 14:04:13,823 - ResourceManager : found DtoServiceCustomer_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 14:04:13,824 - ResourceManager : found TableSql_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 14:07:02,774 - ResourceManager : found Controller_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 14:07:02,810 - ResourceManager : found Entity_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 14:07:02,818 - ResourceManager : found Service_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 14:07:02,840 - ResourceManager : found ServiceImpl_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 14:07:02,847 - ResourceManager : found Dao_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 14:07:02,858 - ResourceManager : found DaoImpl_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 14:07:02,875 - ResourceManager : found MapperXml_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 14:07:02,875 - Null reference [template 'MapperXml_template.vm', line 8, column 17] : ${value} cannot be resolved.
+2017-08-17 14:07:02,875 - Null reference [template 'MapperXml_template.vm', line 12, column 17] : ${value} cannot be resolved.
+2017-08-17 14:07:02,875 - Null reference [template 'MapperXml_template.vm', line 16, column 17] : ${value} cannot be resolved.
+2017-08-17 14:07:02,875 - Null reference [template 'MapperXml_template.vm', line 20, column 17] : ${value} cannot be resolved.
+2017-08-17 14:07:02,875 - Null reference [template 'MapperXml_template.vm', line 24, column 17] : ${value} cannot be resolved.
+2017-08-17 14:07:02,875 - Null reference [template 'MapperXml_template.vm', line 28, column 17] : ${value} cannot be resolved.
+2017-08-17 14:07:02,875 - Null reference [template 'MapperXml_template.vm', line 32, column 17] : ${value} cannot be resolved.
+2017-08-17 14:07:02,875 - Null reference [template 'MapperXml_template.vm', line 36, column 17] : ${value} cannot be resolved.
+2017-08-17 14:07:02,875 - Null reference [template 'MapperXml_template.vm', line 40, column 17] : ${value} cannot be resolved.
+2017-08-17 14:07:02,875 - Null reference [template 'MapperXml_template.vm', line 44, column 17] : ${value} cannot be resolved.
+2017-08-17 14:07:03,033 - ResourceManager : found DtoServiceProduct_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 14:07:03,066 - ResourceManager : found Dto_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 14:07:03,070 - ResourceManager : found DtoServiceCustomer_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 14:07:03,071 - ResourceManager : found TableSql_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 14:08:47,877 - ResourceManager : found Controller_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 14:08:47,911 - ResourceManager : found Entity_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 14:08:47,919 - ResourceManager : found Service_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 14:08:47,939 - ResourceManager : found ServiceImpl_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 14:08:47,946 - ResourceManager : found Dao_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 14:08:47,958 - ResourceManager : found DaoImpl_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 14:08:47,973 - ResourceManager : found MapperXml_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 14:08:47,973 - Null reference [template 'MapperXml_template.vm', line 8, column 17] : ${value} cannot be resolved.
+2017-08-17 14:08:47,973 - Null reference [template 'MapperXml_template.vm', line 12, column 17] : ${value} cannot be resolved.
+2017-08-17 14:08:47,973 - Null reference [template 'MapperXml_template.vm', line 16, column 17] : ${value} cannot be resolved.
+2017-08-17 14:08:47,973 - Null reference [template 'MapperXml_template.vm', line 20, column 17] : ${value} cannot be resolved.
+2017-08-17 14:08:47,973 - Null reference [template 'MapperXml_template.vm', line 24, column 17] : ${value} cannot be resolved.
+2017-08-17 14:08:47,973 - Null reference [template 'MapperXml_template.vm', line 28, column 17] : ${value} cannot be resolved.
+2017-08-17 14:08:47,973 - Null reference [template 'MapperXml_template.vm', line 32, column 17] : ${value} cannot be resolved.
+2017-08-17 14:08:47,973 - Null reference [template 'MapperXml_template.vm', line 36, column 17] : ${value} cannot be resolved.
+2017-08-17 14:08:47,973 - Null reference [template 'MapperXml_template.vm', line 40, column 17] : ${value} cannot be resolved.
+2017-08-17 14:08:47,973 - Null reference [template 'MapperXml_template.vm', line 44, column 17] : ${value} cannot be resolved.
+2017-08-17 14:08:48,125 - ResourceManager : found DtoServiceProduct_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 14:08:48,157 - ResourceManager : found Dto_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 14:08:48,160 - ResourceManager : found DtoServiceCustomer_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-17 14:08:48,161 - ResourceManager : found TableSql_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-18 10:24:25,443 - Log4JLogChute initialized using file 'velocity.log'
+2017-08-18 10:24:25,444 - Initializing Velocity, Calling init()...
+2017-08-18 10:24:25,444 - Starting Apache Velocity v1.7 (compiled: 2010-11-19 12:14:37)
+2017-08-18 10:24:25,444 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2017-08-18 10:24:25,444 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
+2017-08-18 10:24:25,444 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/format/Formatter).  Falling back to next log system...
+2017-08-18 10:24:25,444 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
+2017-08-18 10:24:25,444 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
+2017-08-18 10:24:25,447 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-18 10:24:25,456 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
+2017-08-18 10:24:25,458 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
+2017-08-18 10:24:25,459 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
+2017-08-18 10:24:25,459 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
+2017-08-18 10:24:25,460 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
+2017-08-18 10:24:25,460 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2017-08-18 10:24:25,461 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2017-08-18 10:24:25,462 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2017-08-18 10:24:25,464 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2017-08-18 10:24:25,464 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2017-08-18 10:24:25,559 - Created '20' parsers.
+2017-08-18 10:24:25,564 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2017-08-18 10:24:25,565 - Could not load resource 'VM_global_library.vm' from ResourceLoader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader: ClasspathResourceLoader Error: cannot find resource VM_global_library.vm
+2017-08-18 10:24:25,565 - Velocimacro : Default library not found.
+2017-08-18 10:24:25,565 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2017-08-18 10:24:25,565 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2017-08-18 10:24:25,565 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2017-08-18 10:24:25,565 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2017-08-18 10:24:25,787 - ResourceManager : found Controller_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-18 10:24:25,843 - ResourceManager : found Entity_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-18 10:24:25,857 - ResourceManager : found Service_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-18 10:24:25,879 - ResourceManager : found ServiceImpl_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-18 10:24:25,886 - ResourceManager : found Dao_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-18 10:24:25,898 - ResourceManager : found DaoImpl_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-18 10:24:25,914 - ResourceManager : found MapperXml_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-18 10:24:25,915 - Null reference [template 'MapperXml_template.vm', line 8, column 17] : ${value} cannot be resolved.
+2017-08-18 10:24:25,915 - Null reference [template 'MapperXml_template.vm', line 12, column 17] : ${value} cannot be resolved.
+2017-08-18 10:24:25,915 - Null reference [template 'MapperXml_template.vm', line 16, column 17] : ${value} cannot be resolved.
+2017-08-18 10:24:25,915 - Null reference [template 'MapperXml_template.vm', line 20, column 17] : ${value} cannot be resolved.
+2017-08-18 10:24:25,915 - Null reference [template 'MapperXml_template.vm', line 24, column 17] : ${value} cannot be resolved.
+2017-08-18 10:24:25,915 - Null reference [template 'MapperXml_template.vm', line 28, column 17] : ${value} cannot be resolved.
+2017-08-18 10:24:25,915 - Null reference [template 'MapperXml_template.vm', line 32, column 17] : ${value} cannot be resolved.
+2017-08-18 10:24:25,915 - Null reference [template 'MapperXml_template.vm', line 36, column 17] : ${value} cannot be resolved.
+2017-08-18 10:24:25,915 - Null reference [template 'MapperXml_template.vm', line 40, column 17] : ${value} cannot be resolved.
+2017-08-18 10:24:25,915 - Null reference [template 'MapperXml_template.vm', line 44, column 17] : ${value} cannot be resolved.
+2017-08-18 10:24:26,084 - ResourceManager : found DtoServiceProduct_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-18 10:24:26,124 - ResourceManager : found Dto_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-18 10:24:26,128 - ResourceManager : found DtoServiceCustomer_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-18 10:24:26,129 - ResourceManager : found TableSql_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-18 10:28:41,732 - ResourceManager : found Controller_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-18 10:28:41,768 - ResourceManager : found Entity_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-18 10:28:41,781 - ResourceManager : found Service_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-18 10:28:41,801 - ResourceManager : found ServiceImpl_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-18 10:28:41,809 - ResourceManager : found Dao_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-18 10:28:41,822 - ResourceManager : found DaoImpl_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-18 10:28:41,844 - ResourceManager : found MapperXml_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-18 10:28:41,844 - Null reference [template 'MapperXml_template.vm', line 8, column 17] : ${value} cannot be resolved.
+2017-08-18 10:28:41,844 - Null reference [template 'MapperXml_template.vm', line 12, column 17] : ${value} cannot be resolved.
+2017-08-18 10:28:41,844 - Null reference [template 'MapperXml_template.vm', line 16, column 17] : ${value} cannot be resolved.
+2017-08-18 10:28:41,844 - Null reference [template 'MapperXml_template.vm', line 20, column 17] : ${value} cannot be resolved.
+2017-08-18 10:28:41,844 - Null reference [template 'MapperXml_template.vm', line 24, column 17] : ${value} cannot be resolved.
+2017-08-18 10:28:41,844 - Null reference [template 'MapperXml_template.vm', line 28, column 17] : ${value} cannot be resolved.
+2017-08-18 10:28:41,844 - Null reference [template 'MapperXml_template.vm', line 32, column 17] : ${value} cannot be resolved.
+2017-08-18 10:28:41,844 - Null reference [template 'MapperXml_template.vm', line 36, column 17] : ${value} cannot be resolved.
+2017-08-18 10:28:41,844 - Null reference [template 'MapperXml_template.vm', line 40, column 17] : ${value} cannot be resolved.
+2017-08-18 10:28:41,844 - Null reference [template 'MapperXml_template.vm', line 44, column 17] : ${value} cannot be resolved.
+2017-08-18 10:28:42,026 - ResourceManager : found DtoServiceProduct_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-18 10:28:42,073 - ResourceManager : found Dto_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-18 10:28:42,079 - ResourceManager : found DtoServiceCustomer_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-08-18 10:28:42,081 - ResourceManager : found TableSql_template.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader

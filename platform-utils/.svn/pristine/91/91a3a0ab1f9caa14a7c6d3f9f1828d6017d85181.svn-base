@@ -1,0 +1,8 @@
+fdfs.client.conf.windows.path=C:\\xinju\\fdfs_client.conf
+fdfs.client.conf.linux.path=/etc/fdfs/fdfs_client.conf
+fdfs.storage.http.port=8888
+elastic.search.server=10.17.3.200
+quartz.scheduler.instanceName=xinJuScheduler
+
+# for attachment migrate
+upload.file.root=D:\\

@@ -1,0 +1,15 @@
+package ${g_scheme.packageName}.service;
+
+import com.xinleju.platform.base.service.BaseService;
+import ${g_scheme.packageName}.entity.${g_systable.className};
+
+/**
+ * @author ${g_scheme.author}
+ * 
+ * 
+ */
+
+public interface ${g_systable.className}Service extends  BaseService <String,${g_systable.className}>{
+
+	
+}

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xinleju.platform.ld.entity.LandrayMeetingSummary">
+	<!-- 新增 -->
+	<insert id="save">
+		${value}
+	</insert>
+	<!-- 修改根据Id -->
+	<update id="update">
+		${value}
+	</update>
+	<!-- 伪删除根据Id -->
+	<update id="deletePseudoObjectById">
+		${value}
+	</update>
+	<!-- 批量伪删除根据Id -->
+	<update id="deletePseudoAllObjectByIds">
+		${value}
+	</update>
+	<!-- 删除根据Id -->
+	<delete id="deleteById">
+		${value}
+	</delete>
+	<!-- 批量删除根据Id -->
+	<delete id="deleteBatchByIds">
+		${value}
+	</delete>
+	<!-- 获取单个对象，根据Id-->
+	<select id="get" resultType="com.xinleju.platform.ld.entity.LandrayMeetingSummary">
+		${value}
+	</select>
+	<!-- 获取列表根据Map查询 -->
+	<select id="queryList" resultType="com.xinleju.platform.ld.entity.LandrayMeetingSummary">
+		${value}
+	</select>
+	<!-- 获取分页根据Map查询 -->
+	<select id="queryPageList" resultType="com.xinleju.platform.ld.entity.LandrayMeetingSummary">
+		${value}
+	</select>
+	<!-- 获取总记录数 -->
+	<select id="queryCount" resultType="java.lang.Integer">
+		${value}
+	</select>
+	<!-- 门户流程查询 -->
+	<select id="getPortalData" resultType="com.xinleju.platform.ld.entity.LandrayMeetingSummary" parameterType="java.util.Map">
+		SELECT
+		t.id,
+		t.doc_subject as docSubject,
+		t.url
+		FROM
+		PT_LANDRAY_MEETING_SUMMARY t
+		where t.delflag=0
+		<if test="userId != null and userId !=''">
+			AND t.id in(
+			SELECT DISTINCT s.meeting_instance_id FROM  pt_landray_meeting_user_scale s WHERE  s.person_id in  (
+			SELECT u.landray_id FROM pt_landray_flow_user u WHERE u.oa_id = #{userId}
+			)
+			)
+		</if>
+		order by t.create_date desc
+		limit 0,10
+	</select>
+	<!-- 过滤分页查询 -->
+	<select id="getData" resultType="java.util.Map" parameterType="java.util.Map">
+		SELECT
+		t.id,
+		t.doc_subject as docSubject,
+		t.doc_status as docStatus,
+		t.type_of_meeting as typeOfMeeting,
+		t.fd_plan_hold_time as fdPlanHoldTime,
+		t.fd_other_hold_place as fdOtherHoldPlace,
+		t.fd_template_name as fdTemplateName,
+		t.fd_other_host as fdOtherHost,
+		t.fd_host_id as fdHostId,
+		t.create_person_name as createPersonName,
+		t.url
+		FROM
+		PT_LANDRAY_MEETING_SUMMARY t
+		where t.delflag=0
+		<if test="userId != null and userId !=''">
+			AND t.id in(
+			SELECT DISTINCT s.meeting_instance_id FROM  pt_landray_meeting_user_scale s WHERE  s.person_id in  (
+			SELECT u.landray_id FROM pt_landray_flow_user u WHERE u.oa_id = #{userId}
+			)
+			)
+		</if>
+		<if test="name != null and name !=''">
+			and   t.doc_subject like CONCAT(CONCAT('%',#{name}),'%')
+		</if>
+		order by t.create_date desc
+		limit #{start},#{limit}
+	</select>
+	<!-- 过滤查询条数 -->
+	<select id="getDataCount" resultType="java.lang.Integer" parameterType="java.util.Map">
+		SELECT
+		count(t.id)
+		FROM
+		PT_LANDRAY_MEETING_SUMMARY t
+		where t.delflag=0
+		<if test="userId != null and userId !=''">
+			AND t.id in(
+			SELECT DISTINCT s.meeting_instance_id FROM  pt_landray_meeting_user_scale s WHERE  s.person_id in  (
+			SELECT u.landray_id FROM pt_landray_flow_user u WHERE u.oa_id = #{userId}
+			)
+			)
+		</if>
+		<if test="name != null and name !=''">
+			and   t.doc_subject like CONCAT(CONCAT('%',#{name}),'%')
+		</if>
+	</select>
+</mapper>

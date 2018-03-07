@@ -1,0 +1,20 @@
+package ${g_scheme.packageName}.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.xinleju.platform.base.controller.BaseController;
+import ${g_scheme.packageName}.entity.${g_systable.className};
+
+
+/**
+ * @author ${g_scheme.author}
+ * 
+ *
+ */
+@Controller
+@RequestMapping("/${g_scheme.moduleName}/${g_systable.className.substring(0,1).toLowerCase()}${g_systable.className.substring(1)}")
+public class ${g_systable.className}Controller extends BaseController<String,${g_systable.className}>{
+	
+	
+}

@@ -1,0 +1,24 @@
+package ${g_scheme.packageName}.dao.impl;
+
+import org.springframework.stereotype.Repository;
+
+import com.xinleju.platform.base.dao.impl.BaseDaoImpl;
+import ${g_scheme.packageName}.dao.${g_systable.className}Dao;
+import ${g_scheme.packageName}.entity.${g_systable.className};
+
+/**
+ * @author ${g_scheme.author}
+ * 
+ * 
+ */
+
+@Repository
+public class ${g_systable.className}DaoImpl extends BaseDaoImpl<String,${g_systable.className}> implements ${g_systable.className}Dao{
+
+	public ${g_systable.className}DaoImpl() {
+		super();
+	}
+
+	
+	
+}

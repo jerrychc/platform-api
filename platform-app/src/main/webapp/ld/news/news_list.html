@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>历史新闻</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <script src="../../common/common.css.js"></script>
+    <script>
+        /**
+         * 选择公司加载完公司后，大类下面的新闻内容要发生变化，加载该公司下面的新闻
+         */
+        function changeCompanyCallback(data, $ele) {
+            $('#createCompanyName').val(data.name);
+        }
+        /**
+         * 删除选择公司
+         */
+        function delCreateCompanyName(){
+            $('#createCompanyName').val('');
+        }
+    </script>
+</head>
+<body>
+<header class="container-fluid xj-index-header">
+    <div class="row clearfix">
+        <div class="col-md-1 col-sm-2 xj-index-logo">
+            <img src="../../common/img/logo.png" alt="巨洲云">
+        </div>
+        <div id="newsTitle" class="col-md-8 col-sm-6 col-xs-6 xj-form-title">新闻列表</div>
+        <div class="col-md-3 col-sm-4 col-xs-4 xj-form-btn">
+        </div>
+    </div>
+</header>
+<div class="container-fluid xj-font">
+    <div class="row">
+        <div class="col-md-11 container-all jz">
+            <div class="xj-main-advanced container-fluid" hidden="hidden">
+                <div class="row clearfix">
+                    <form class="form-inline">
+                        <div class="col-md-10 rm-pad expand-search"></div>
+                        <div class="col-md-2 rm-pad"></div>
+                    </form>
+                </div>
+            </div>
+            <div class="xj-main-dimsearch container-fluid">
+                <div class="row user-list" style="background-color: #F5F5F5;">
+                    <div class="form-inline">
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <div class="form-group">
+                                <span><span class="org-icons list-icon"></span><span class="tit"></span></span>
+                                <input id="corname" type="text" class="form-control" placeholder="主题" >
+                                <div class="input-group resetwidth" style="display:none;"><input type="text" id="createCompanyName" class="form-control" readonly="readonly" title=""><div class="input-group-addon resetposition"><a class="glyphicon glyphicon-remove" onclick="delCreateCompanyName()"></a></div><span class="input-group-addon w28" style="cursor: pointer;">
+                                    <a class="single-selector more-component" href="javascript:void(0);" style="font-size: 8px;margin-right: 10px; color: rgb(51, 51, 51); cursor: pointer;" data-treeparam="{&quot;orgStatus&quot;:&quot;1&quot;,&quot;rootSelect&quot;:&quot;1&quot;,&quot;rootStatus&quot;:&quot;1&quot;,&quot;orgDelFlag&quot;:&quot;0&quot;,&quot;type&quot;:&quot;company&quot;,&quot;rootDelFlag&quot;:&quot;0&quot;}" data-selectnodetype="{&quot;msg&quot;:&quot;请选择公司&quot;,&quot;type&quot;:&quot;company&quot;}" data-treeurl="/platform-app/sys/org/root/getOrgTreeByType" data-savecallback="changeCompanyCallback" readonly="readonly">&nbsp;更换公司</a>
+                                    </span></div>
+                                <button type="button" class="btn btn-sm btn-dim rm-pad" onclick="javascript:_newsList.searchData()">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-8 col-sm-8 col-xs-8 btns-group clearfix">
+                            <button  type="button" class="btn btn-sm"  onclick="javascript:_newsList.toDetail()">查看</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="xj-main-grid grid-container">
+                <table id="list2" constraint-layout="true"></table>
+                <div id="pager2"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../common/common.js"></script>
+<script src="news_list.js"></script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+.xj-form-tab{
+    height: 50px;
+    line-height: 50px;
+}
+.flow-tab-content{
+    border:none;
+}
+.xj-form-content{
+    border: 1px solid #e1e1e1;
+    border-top: none;
+}
+.approve-title{
+    height:50px;
+    width: 100%;
+    background: #F5F5F5;
+    border: 1px solid #F0F0F0;
+    padding: 0 20px;
+    line-height: 50px;
+    margin-top: 20px;
+}
+.approve-title span.tit{
+    font-family: MicrosoftYaHei-Bold;
+    font-size: 12px;
+    color: #333333;
+    letter-spacing: 0;
+    display: inline-block;
+    padding-left: 15px;
+    background: url("../../../images/examine@2x.png") no-repeat left center ;
+    background-size: 11px 12px;
+    float: left;
+    line-height: 50px;
+}
+.approve-title input[type='radio']{
+    margin-left: 50px;
+}
+.flow-edit select {
+    width: auto;
+    display: inline-block;
+    margin:0 20px;
+    color: #666;
+}
+.flow-edit .editBtn{
+    font-family: MicrosoftYaHei;
+    font-size: 12px;
+    color: #46A7FF;
+    letter-spacing: 0;
+    padding-left: 15px;
+    background: url("../../../images/savebox@2x.png") no-repeat left center;
+    background-size: 13px 11px;
+}
+.item-box{
+    overflow: hidden;
+    width: 100%;
+    border: 1px solid #e1e1e1;
+    padding-bottom: 20px;
+    border-top: 0;
+    margin-bottom: 50px;
+}
+.item .huanjie_Name{
+    background: url("../../../images/huanjie@2x.png") no-repeat left center;
+    background-size: 12px 9px;
+    padding-left: 15px;
+    line-height: 62px;
+}
+.item{
+    margin-top: 20px;
+}
+.item-con {
+    height: 62px;
+    border: 2px dotted  #E1E1E1;
+    border-radius: 2px;
+    overflow: hidden;
+    padding: 0;
+    float: left;
+}
+.item-con .type{
+    width: 20%;
+    float: left;
+    line-height: 58px;
+    border-right: 2px dotted  #E1E1E1;
+    text-align: center;
+}
+.item-con .person-box{
+    width: 80%;
+    float: left;
+    margin-top: 16px;
+    padding: 0 20px;
+    text-align: center;
+}
+.item-con .add-box{
+    width: 20%;
+    text-align: center;
+}
+.item-con .add_h{
+    padding-left: 15px;
+    font-family: MicrosoftYaHei;
+    font-size: 12px;
+    color: #46A7FF;
+    letter-spacing: 0;
+    background: url("../../../images/hj_add@2x.png") no-repeat left center;
+    background-size: 12px 12px;
+    line-height: 58px;
+    cursor: pointer;
+}
+.del-box{
+    text-align: center;
+}
+.del-box .delete_h{
+    width: 13px;
+    height:13px;
+    vertical-align: middle;
+    display: inline-block;
+    margin-top:24px;
+    background: url("../../../images/hj_delete_nor@2x.png") no-repeat center center;
+}
+.del-box .delete_h:hover{
+    background: url("../../../images/hj_delete_hov@2x.png") no-repeat center center;
+}
+.pd0{
+    padding: 0;
+}
+.tlcenter{
+    text-align: center;
+}
+.temp-icon{
+    background: url("../../images/savebox@2x.png") no-repeat left center;
+    background-size:13px 11px;
+    padding-left: 18px;
+    line-height: 28px;
+    color: #333;
+}
+.order-box{
+    border:1px solid #e1e1e1;
+    overflow: hidden;
+    height: 400px;
+}
+.order-box li{
+    border-bottom: 1px dotted #e1e1e1;
+    padding: 0 15px;
+    height: 36px;
+    line-height: 36px;
+    color: #666;
+    font-size: 12px;
+
+}
+.order-box li:hover,.order-box li:hover span.tmp-name{
+    background: #F1F8FF;
+    color: #333;
+}
+.order-box li span.tmp-name{
+    max-width: 260px;
+    float: left;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.order-box li a.up{
+    background: url("../../../images/up_nor@2x.png") no-repeat center center;
+    background-size: 10px 12px;
+}
+.order-box li a.up:hover{
+    background: url("../../../images/up_hov@2x.png") no-repeat center center;
+    background-size: 10px 12px;
+}
+.order-box li a.down{
+    background: url("../../../images/down_nor@2x.png") no-repeat center center;
+    background-size: 10px 12px;
+}
+.order-box li a.down:hover{
+    background: url("../../../images/down_hov@2x.png") no-repeat center center;
+    background-size: 10px 12px;
+}
+.order-box li a.tmp-del{
+    background: url("../../../images/delete_nor@2x.png") no-repeat center center;
+    background-size: 10px 12px;
+}
+.order-box li a.tmp-del:hover{
+    background: url("../../../images/delete_hov@2x.png") no-repeat center center;
+    background-size: 10px 12px;
+}
+.order-box li a{
+    float: right;
+    width: 10px;
+    height: 12px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+    margin-top: 11px;
+}

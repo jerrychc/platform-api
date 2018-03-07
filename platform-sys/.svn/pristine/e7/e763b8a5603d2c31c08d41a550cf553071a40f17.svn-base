@@ -1,0 +1,147 @@
+package com.xinleju.platform.flow.service.impl;
+
+import com.xinleju.platform.base.utils.Page;
+import com.xinleju.platform.flow.dao.ParticipantDao;
+import com.xinleju.platform.flow.entity.Participant;
+import org.apache.commons.lang.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.xinleju.platform.base.service.impl.BaseServiceImpl;
+import com.xinleju.platform.flow.dao.AcDao;
+import com.xinleju.platform.flow.entity.Ac;
+import com.xinleju.platform.flow.service.AcService;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.*;
+
+/**
+ * @author admin
+ * 
+ * 
+ */
+
+@Service
+public class AcServiceImpl extends  BaseServiceImpl<String,Ac> implements AcService{
+	
+
+	@Autowired
+	private AcDao acDao;
+
+	@Autowired
+	private ParticipantDao participantDao;
+
+	@Override
+	@Transactional(readOnly = false, propagation = Propagation.REQUIRED)
+	public Map<String, Object> batchUpdateAcAttr(Map<String, Object> updateAttrMap) throws Exception {
+		String acIds = (String) updateAttrMap.get("updateAcIds");
+		String flIds = (String) updateAttrMap.get("updateFlIds");
+		Map<String,Object> updateAttrData = (Map<String, Object>) updateAttrMap.get("updateAttrData");
+		Map<String,Object> updatePersonInfoMap = (Map<String, Object>) updateAttrMap.get("updatePersonInfo");
+
+		String[] acIdArr = acIds.split(",");
+		List<String> acIdList = Arrays.asList(acIdArr);
+		updateAttrData.put("acIdList",acIdList);
+
+		updateAttrData.putAll(updatePersonInfoMap);
+		//更新节点属性
+		acDao.batchUpdateAcAttr(updateAttrData);
+
+		//更新对应的模板
+		String[] flIdArr = flIds.split(",");
+		List<String> flIdList = Arrays.asList(flIdArr);
+		updateAttrData.put("flIdList",flIdList);
+		acDao.batchUpdateAcAttr(updateAttrData);
+
+		return updateAttrMap;
+	}
+
+	@Override
+	public Page queryModifyAcListByPage(Map<String, Object> searchParams) throws Exception {
+		//处理业务对象ID
+		String busiObjectId = (String) searchParams.get("busiObjectId");
+		if(StringUtils.isNotBlank(busiObjectId)){
+			searchParams.remove("busiObjectId");
+			searchParams.remove("busiObjectName");
+
+			String[] arr = busiObjectId.split(",");
+			List<String> busiObjectIdArr = Arrays.asList(arr);
+
+			searchParams.put("busiObjectIdArr",busiObjectIdArr);
+		}
+
+		//对象类型
+		String participantCate = (String) searchParams.get("participantCate");
+		//处理参与人ID
+		String participantId = (String) searchParams.get("participantId");
+		//如果是人员查询则需要计算参与人身份
+		if("1".equals(participantCate)){
+			String participantRoleId = (String) searchParams.get("participantRoleId");
+			participantRoleId = StringUtils.isBlank(participantRoleId)?participantId:participantRoleId;
+			searchParams.put("participantId",participantRoleId);
+			searchParams.remove("participantRole");
+			searchParams.remove("participantRoleId");
+		}
+
+		//处理参与人ID
+		participantId = (String) searchParams.get("participantId");
+		if(StringUtils.isNotBlank(participantId)){
+			searchParams.remove("participantId");
+			searchParams.remove("participantName");
+
+			String[] arr = participantId.split(",");
+			List<String> participantIdArr = Arrays.asList(arr);
+
+			Map<String,Object> participantParamMap = new HashMap<String,Object>();
+			participantParamMap.put("participantIdArr",participantIdArr);
+			List<Participant> participantList = participantDao.queryListByAcIdGroup(participantParamMap);
+			List<String> acIdList = new ArrayList<String>();
+			if(participantList!=null&&participantList.size()>0){
+				for (Participant participant:participantList) {
+					String acId = participant.getAcId();
+					acIdList.add(acId);
+				}
+				searchParams.put("acIdList",acIdList);
+			}
+		}
+
+
+		//获取节点列表
+		Page page = acDao.queryModifyAcListByPage(searchParams);
+		List<Map<String,Object>> acMapList = page.getList();
+		if(acMapList!=null&&acMapList.size()>0){
+			List<String> acIdList = new ArrayList<String>();
+			for (Map<String,Object> acMap:acMapList) {
+				String acId = (String) acMap.get("id");
+				acIdList.add(acId);
+			}
+
+			if(acIdList.size()>0){
+				Map<String,Object> participantParam = new HashMap<String,Object>();
+				participantParam.put("acIdList",acIdList);
+				List<Participant> participantList = participantDao.queryListByAcIdGroup(participantParam);
+				Map<String,Map<String,Object>> participantMap = new HashMap<String,Map<String,Object>>();
+				for (Participant participant:participantList) {
+					String acId = participant.getAcId();
+					String participantId1 = participant.getParticipantId();
+					String participantName = participant.getParticipantName();
+					Map<String,Object> partnerMap = new HashMap<String,Object>();
+					partnerMap.put("participantId",participantId1);
+					partnerMap.put("participantName",participantName);
+					participantMap.put(acId,partnerMap);
+				}
+
+				for (Map<String,Object> acMap:acMapList) {
+					String acId = (String) acMap.get("id");
+					Map<String,Object> newMap = participantMap.get(acId);
+					newMap = newMap==null?new HashMap<String,Object>():newMap;
+					acMap.putAll(newMap);
+				}
+
+			}
+		}
+		page.setList(acMapList);
+		return page;
+	}
+}

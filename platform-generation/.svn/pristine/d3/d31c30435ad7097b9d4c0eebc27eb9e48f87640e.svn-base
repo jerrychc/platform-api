@@ -1,0 +1,59 @@
+package ${g_scheme.packageName}.dto;
+
+import com.xinleju.platform.base.dto.BaseDto;
+
+
+##判断是否有Date，Timestamp，BigDecimal类型的属性，如果有，引入java.util.Date包,---Start
+#set($isDate = "false")
+#set($isTimestamp = "false") 
+#set($isBigDecimal = "false") 
+#foreach ( $l_o in $l_column ) 
+#if(${l_o.javaType} == 'Date')
+	#set($isDate = "true")
+#end
+#if(${l_o.javaType} == 'Timestamp')
+	#set($isTimestamp = "true")
+#end
+#if(${l_o.javaType} == 'BigDecimal')
+	#set($isBigDecimal = "true")
+#end
+#end
+#if($isDate == 'true')
+import java.util.Date;
+#end
+#if($isBigDecimal == 'true')
+import java.math.BigDecimal;
+#end
+#if($isTimestamp == 'true')
+import java.sql.Timestamp;
+#end
+##判断是否有Date类型的属性，如果有，引入java.util.Date包---End
+
+
+
+/**
+ * @author ${g_scheme.author}
+ * 
+ *
+ */
+public class ${class_name}Dto extends BaseDto{
+
+	#foreach ( $something in $l_column ) 
+	
+	//${something.comments}
+	private ${something.javaType} ${something.javaField};
+    
+  	#end
+	
+	#foreach ( $something in $l_column ) 
+	
+	public ${something.javaType} get${something.javaField.substring(0,1).toUpperCase()}${something.javaField.substring(1)}() {
+		return ${something.javaField};
+	}
+	public void set${something.javaField.substring(0,1).toUpperCase()}${something.javaField.substring(1)}(${something.javaType} ${something.javaField}) {
+		this.${something.javaField} = ${something.javaField};
+	}
+    
+  	#end	
+	
+}

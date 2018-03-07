@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xinleju.platform.flow.entity.PassReadRecord">
+	<!-- 新增 -->
+	<insert id="save">
+		${value}
+	</insert>
+	<!-- 修改根据Id -->
+	<update id="update">
+		${value}
+	</update>
+	<!-- 伪删除根据Id -->
+	<update id="deletePseudoObjectById">
+		${value}
+	</update>
+	<!-- 批量伪删除根据Id -->
+	<update id="deletePseudoAllObjectByIds">
+		${value}
+	</update>
+	<!-- 删除根据Id -->
+	<delete id="deleteById">
+		${value}
+	</delete>
+	<!-- 批量删除根据Id -->
+	<delete id="deleteBatchByIds">
+		${value}
+	</delete>
+	<!-- 获取单个对象，根据Id-->
+	<select id="get" resultType="com.xinleju.platform.flow.entity.PassReadRecord">
+		${value}
+	</select>
+	<!-- 获取列表根据Map查询 -->
+	<select id="queryList" resultType="com.xinleju.platform.flow.entity.PassReadRecord">
+		${value}
+	</select>
+	<!-- 获取分页根据Map查询 -->
+	<select id="queryPageList" resultType="com.xinleju.platform.flow.entity.PassReadRecord">
+		${value}
+	</select>
+	<!-- 获取总记录数 -->
+	<select id="queryCount" resultType="java.lang.Integer">
+		${value}
+	</select>
+	
+	<select id="queryPassReadList" parameterType="java.lang.String" resultType="com.xinleju.platform.flow.entity.PassReadRecord">
+		SELECT
+			id AS id,
+			fi_id AS fiId,
+			transation_user_name AS transationUserName,
+			transation_date AS transationDate,
+			cancel_pass_read_time AS cancelPassReadTime,
+			GROUP_CONCAT(to_user_name) as toUserName
+		FROM
+			pt_flow_pass_read_record
+		WHERE
+			fi_id = #{instanceId}
+		GROUP BY
+			transation_date;
+	</select>
+	
+	<select id="queryPassReadListById" parameterType="java.lang.String" resultType="com.xinleju.platform.flow.entity.PassReadRecord">
+		SELECT
+			t.id as id,
+			t.create_person_id as createPersonId,
+			t.create_person_name as createPersonName,
+			t.create_date as createDate,
+			t.update_person_id as updatePersonId,
+			t.update_person_name as updatePersonName,
+			t.update_date as  updateDate,
+			t.delflag as delflag,
+			t.concurrency_version as concurrencyVersion,
+			t.fi_id as fiId,
+			t.transation_user_id as transationUserId,
+			t.transation_user_name as transationUserName,
+			t.to_user_id as toUserId,
+			t.to_user_name as toUserName,
+			t.transation_date as transationDate,
+			t.action_name as actionName,
+			t.msg_id as msgId,
+			t.cancel_pass_read_time as cancelPassReadTime
+		FROM
+			pt_flow_pass_read_record t
+		WHERE
+			t.transation_date = (
+				SELECT
+					s.transation_date
+				FROM
+					pt_flow_pass_read_record s
+				WHERE
+					s.id = #{id}
+			)
+	</select>
+	
+</mapper>

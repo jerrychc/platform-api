@@ -1,0 +1,20 @@
+package com.xinleju.platform.flow.dao;
+
+import java.util.List;
+import java.util.Map;
+
+import com.xinleju.platform.base.dao.BaseDao;
+import com.xinleju.platform.flow.entity.InstanceVariable;
+
+/**
+ * @author admin
+ *
+ */
+
+public interface InstanceVariableDao extends BaseDao<String, InstanceVariable> {
+
+	List<InstanceVariable> queryVariableByFlId(Map<String, Object> paramMap);
+	
+	
+
+}
